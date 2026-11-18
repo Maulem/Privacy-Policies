@@ -25,6 +25,9 @@
     color: var(--fg); text-decoration: none; font-size: 14px; background: var(--card);
   }
   nav a:hover { border-color: var(--accent); color: var(--accent); }
+  nav a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  /* With JavaScript, only the selected language is shown. Without it, all three stay visible. */
+  .js section[data-lang]:not(.active) { display: none; }
   section { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px 24px 8px; margin-bottom: 32px; }
   h1 { font-size: 28px; line-height: 1.25; margin: 0 0 4px; }
   h2 { font-size: 18px; margin: 28px 0 8px; }
@@ -39,13 +42,13 @@
 <main>
 
 <nav aria-label="Language">
-  <a href="#en" hreflang="en">English</a>
-  <a href="#pt" hreflang="pt-BR">Português</a>
-  <a href="#es" hreflang="es">Español</a>
+  <a href="#en" hreflang="en" data-lang="en">English</a>
+  <a href="#pt" hreflang="pt-BR" data-lang="pt">Português</a>
+  <a href="#es" hreflang="es" data-lang="es">Español</a>
 </nav>
 
 <!-- ============================ ENGLISH ============================ -->
-<section id="en" lang="en">
+<section id="en" lang="en" data-lang="en">
   <h1>Xiu – Privacy Policy</h1>
   <p class="meta">Developer: NKO Industries · Last updated: November 18, 2026</p>
 
@@ -89,11 +92,11 @@
   <p>If the app's use of data changes (for example, if ads are added in a future version), this page will be updated before that version is released, and the date above will change.</p>
 
   <h2>Contact</h2>
-  <p>Questions about this policy: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></p>
+  <p>Questions about this policy: <a href="mailto:henriquemmarti@gmail.com">henriquemmarti@gmail.com</a></p>
 </section>
 
 <!-- =========================== PORTUGUÊS =========================== -->
-<section id="pt" lang="pt-BR">
+<section id="pt" lang="pt-BR" data-lang="pt">
   <h1>Xiu – Política de Privacidade</h1>
   <p class="meta">Desenvolvedor: NKO Industries · Última atualização: 18 de novembro de 2026</p>
 
@@ -137,11 +140,11 @@
   <p>Se o uso de dados do app mudar (por exemplo, se uma versão futura tiver anúncios), esta página será atualizada antes do lançamento dessa versão, e a data acima vai mudar.</p>
 
   <h2>Contato</h2>
-  <p>Dúvidas sobre esta política: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></p>
+  <p>Dúvidas sobre esta política: <a href="mailto:henriquemmarti@gmail.com">henriquemmarti@gmail.com</a></p>
 </section>
 
 <!-- ============================ ESPAÑOL ============================ -->
-<section id="es" lang="es">
+<section id="es" lang="es" data-lang="es">
   <h1>Xiu – Política de Privacidad</h1>
   <p class="meta">Desarrollador: NKO Industries · Última actualización: 18 de noviembre de 2026</p>
 
@@ -185,10 +188,52 @@
   <p>Si cambia el uso de datos de la app (por ejemplo, si una versión futura incluye anuncios), esta página se actualizará antes de publicar esa versión, y la fecha de arriba cambiará.</p>
 
   <h2>Contacto</h2>
-  <p>Preguntas sobre esta política: <a href="mailto:CONTACT_EMAIL">CONTACT_EMAIL</a></p>
+  <p>Preguntas sobre esta política: <a href="mailto:henriquemmarti@gmail.com">henriquemmarti@gmail.com</a></p>
 </section>
 
 <footer>© 2026 NKO Industries</footer>
 </main>
+<script>
+(function () {
+  var langs = ["en", "pt", "es"];
+  var htmlLang = { en: "en", pt: "pt-BR", es: "es" };
+  var root = document.documentElement;
+  root.classList.add("js");
+
+  function show(lang) {
+    if (langs.indexOf(lang) < 0) lang = "en";
+    document.querySelectorAll("section[data-lang]").forEach(function (s) {
+      s.classList.toggle("active", s.getAttribute("data-lang") === lang);
+    });
+    document.querySelectorAll("nav a[data-lang]").forEach(function (a) {
+      a.setAttribute("aria-current", a.getAttribute("data-lang") === lang ? "true" : "false");
+    });
+    root.lang = htmlLang[lang];
+  }
+
+  function fromHash() {
+    var h = (location.hash || "").replace("#", "").toLowerCase();
+    return langs.indexOf(h) >= 0 ? h : null;
+  }
+
+  function fromBrowser() {
+    var l = (navigator.language || "en").toLowerCase().slice(0, 2);
+    return langs.indexOf(l) >= 0 ? l : "en";
+  }
+
+  document.querySelectorAll("nav a[data-lang]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var lang = a.getAttribute("data-lang");
+      show(lang);
+      try { history.replaceState(null, "", "#" + lang); } catch (err) {}
+      window.scrollTo(0, 0);
+    });
+  });
+
+  window.addEventListener("hashchange", function () { var h = fromHash(); if (h) show(h); });
+  show(fromHash() || fromBrowser());
+})();
+</script>
 </body>
 </html>
