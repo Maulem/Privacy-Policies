@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burger 42 – Política de Privacidade</title>
+<meta name="description" content="Política de privacidade do app Burger 42, da NKO Industries.">
+<style>
+  :root {
+    --bg: #fafafa; --fg: #1d1d1f; --muted: #5f6368; --card: #ffffff;
+    --line: #e3e3e6; --accent: #c8321f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #121214; --fg: #ececf0; --muted: #a0a3ab; --card: #1c1c20; --line: #2e2e34; --accent: #ff7a63; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  nav a {
+    padding: 6px 14px; border: 1px solid var(--line); border-radius: 999px;
+    color: var(--fg); text-decoration: none; font-size: 14px; background: var(--card);
+  }
+  nav a:hover { border-color: var(--accent); color: var(--accent); }
+  nav a[aria-current="true"] { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+  /* With JavaScript, only the selected language is shown. Without it, both stay visible. */
+  .js section[data-lang]:not(.active) { display: none; }
+  section { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px 24px 8px; margin-bottom: 32px; }
+  h1 { font-size: 28px; line-height: 1.25; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 28px 0 8px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 0 0 16px; }
+  ul { padding-left: 20px; }
+  li { margin: 4px 0; }
+  a { color: var(--accent); }
+  footer { color: var(--muted); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+
+<nav aria-label="Idioma / Language">
+  <a href="#pt" hreflang="pt-BR" data-lang="pt">Português</a>
+  <a href="#en" hreflang="en" data-lang="en">English</a>
+</nav>
+
+<!-- =========================== PORTUGUÊS =========================== -->
+<section id="pt" lang="pt-BR" data-lang="pt">
+  <h1>Burger 42 – Política de Privacidade</h1>
+  <p class="meta">Desenvolvedor: NKO Industries · Última atualização: 19 de novembro de 2026</p>
+
+  <p>O Burger 42 é um app para um grupo de amigos avaliar juntos as hamburguerias de São Paulo. Ele funciona no Android e também como site. Esta política explica quais dados o app guarda, onde ficam, quem pode vê-los e como apagá-los. Resumindo: <strong>o app guarda só o necessário para o grupo funcionar, seus dados são vistos apenas pelos membros do seu grupo, e nada é vendido ou usado para anúncios.</strong></p>
+
+  <h2>Dados que você fornece</h2>
+  <ul>
+    <li><strong>E-mail.</strong> Usado para entrar no app: enviamos um código de 6 dígitos para o seu e-mail. Não usamos seu e-mail para propaganda.</li>
+    <li><strong>Nome de exibição.</strong> Aparece para os membros do seu grupo junto com suas avaliações.</li>
+    <li><strong>Avaliações.</strong> As notas que você dá (hambúrguer, ambiente, acompanhamento e preço), seus comentários e as datas das visitas.</li>
+    <li><strong>Fotos.</strong> Só as fotos que você escolhe tirar com a câmera ou selecionar na galeria são enviadas. Elas são reduzidas antes do envio. O app não acessa o resto da sua galeria.</li>
+    <li><strong>Grupo.</strong> De qual grupo você participa e o seu papel nele (membro ou administrador).</li>
+  </ul>
+
+  <h2>Dados guardados só no seu aparelho</h2>
+  <p>A preferência de aparência (tema claro ou escuro) fica salva no próprio aparelho e não é enviada a lugar nenhum.</p>
+
+  <h2>Onde os dados ficam e quem pode ver</h2>
+  <ul>
+    <li>Os dados da conta, do grupo, das avaliações e as fotos ficam guardados no <strong>Supabase</strong>, um serviço de banco de dados e hospedagem, em servidores em São Paulo, Brasil.</li>
+    <li>Só os membros do seu grupo conseguem ver seu nome, suas avaliações e suas fotos. As fotos ficam em um armazenamento privado, não em links públicos.</li>
+    <li>O acesso é protegido por regras no servidor: cada pessoa só pode alterar ou apagar as próprias avaliações e fotos.</li>
+  </ul>
+
+  <h2>Serviços de terceiros</h2>
+  <ul>
+    <li><strong>Supabase:</strong> login, banco de dados e armazenamento das fotos.</li>
+    <li><strong>Brevo:</strong> envio do e-mail com o código de login. Recebe apenas seu endereço de e-mail para isso.</li>
+    <li><strong>Google Fonts:</strong> as fontes do app podem ser baixadas dos servidores do Google, que recebem o endereço IP do aparelho, como em qualquer download.</li>
+  </ul>
+  <p>Esses serviços tratam os dados apenas para fazer o app funcionar.</p>
+
+  <h2>O que o app não faz</h2>
+  <ul>
+    <li>Não mostra anúncios e não usa o ID de publicidade.</li>
+    <li>Não usa análises de uso nem rastreamento.</li>
+    <li>Não acessa sua localização nem seus contatos.</li>
+    <li>Não vende nem compartilha seus dados pessoais com terceiros para outros fins.</li>
+  </ul>
+
+  <h2>Links para outros apps e sites</h2>
+  <p>O app tem botões que abrem o Google Maps e o Instagram das hamburguerias. Eles abrem fora do Burger 42, e esses serviços têm suas próprias políticas de privacidade.</p>
+
+  <h2 id="excluir-conta">Como apagar seus dados ou sua conta</h2>
+  <ul>
+    <li>Você pode editar ou apagar suas avaliações e fotos no próprio app a qualquer momento.</li>
+    <li>Para excluir sua conta, mande um e-mail para <a href="mailto:henriquemmarti@gmail.com?subject=Burger%2042%20-%20Excluir%20conta">henriquemmarti@gmail.com</a> com o assunto "Burger 42 – Excluir conta", a partir do e-mail cadastrado. Sua conta, seu nome, suas avaliações e suas fotos são apagados em até 30 dias.</li>
+    <li>Enquanto a conta existir, os dados ficam guardados para o grupo continuar vendo o ranking.</li>
+  </ul>
+
+  <h2>Seus direitos</h2>
+  <p>De acordo com a Lei Geral de Proteção de Dados (LGPD), você pode pedir acesso, correção ou exclusão dos seus dados pelo e-mail de contato abaixo.</p>
+
+  <h2>Crianças</h2>
+  <p>O Burger 42 não é voltado para menores de 13 anos e não coleta dados deles de forma consciente.</p>
+
+  <h2>Mudanças nesta política</h2>
+  <p>Se o uso de dados do app mudar, esta página será atualizada antes da nova versão ser lançada, e a data acima vai mudar.</p>
+
+  <h2>Contato</h2>
+  <p>Dúvidas sobre esta política: <a href="mailto:henriquemmarti@gmail.com">henriquemmarti@gmail.com</a></p>
+</section>
+
+<!-- ============================ ENGLISH ============================ -->
+<section id="en" lang="en" data-lang="en">
+  <h1>Burger 42 – Privacy Policy</h1>
+  <p class="meta">Developer: NKO Industries · Last updated: November 19, 2026</p>
+
+  <p>Burger 42 is an app for a group of friends to rate São Paulo's burger places together. It runs on Android and as a website. This policy explains what data the app keeps, where it is stored, who can see it and how to delete it. In short: <strong>the app keeps only what the group needs, your data is seen only by members of your group, and nothing is sold or used for ads.</strong></p>
+
+  <h2>Data you provide</h2>
+  <ul>
+    <li><strong>Email address.</strong> Used to sign in: the app sends a 6-digit code to your email. It is not used for marketing.</li>
+    <li><strong>Display name.</strong> Shown to members of your group next to your reviews.</li>
+    <li><strong>Reviews.</strong> Your scores (burger, atmosphere, sides and price), your notes and visit dates.</li>
+    <li><strong>Photos.</strong> Only the photos you choose to take with the camera or pick from your gallery are uploaded. They are resized before upload. The app does not access the rest of your gallery.</li>
+    <li><strong>Group.</strong> Which group you belong to and your role in it (member or admin).</li>
+  </ul>
+
+  <h2>Data kept only on your device</h2>
+  <p>Your appearance setting (light or dark theme) is saved on the device and never sent anywhere.</p>
+
+  <h2>Where data is stored and who can see it</h2>
+  <ul>
+    <li>Account, group, review data and photos are stored with <strong>Supabase</strong>, a database and hosting service, on servers in São Paulo, Brazil.</li>
+    <li>Only members of your group can see your name, reviews and photos. Photos are kept in private storage, not at public links.</li>
+    <li>Access is enforced by rules on the server: each person can only change or delete their own reviews and photos.</li>
+  </ul>
+
+  <h2>Third-party services</h2>
+  <ul>
+    <li><strong>Supabase:</strong> sign-in, database and photo storage.</li>
+    <li><strong>Brevo:</strong> sends the sign-in code email. It only receives your email address for that.</li>
+    <li><strong>Google Fonts:</strong> the app's fonts may be downloaded from Google's servers, which see the device's IP address, as with any download.</li>
+  </ul>
+  <p>These services process data only to make the app work.</p>
+
+  <h2>What the app does not do</h2>
+  <ul>
+    <li>No ads, and no use of the advertising ID.</li>
+    <li>No analytics or tracking.</li>
+    <li>No access to your location or contacts.</li>
+    <li>Your personal data is not sold or shared with third parties for any other purpose.</li>
+  </ul>
+
+  <h2>Links to other apps and websites</h2>
+  <p>The app has buttons that open Google Maps and the burger places' Instagram pages. They open outside Burger 42, and those services have their own privacy policies.</p>
+
+  <h2 id="delete-account">Deleting your data or your account</h2>
+  <ul>
+    <li>You can edit or delete your reviews and photos in the app at any time.</li>
+    <li>To delete your account, email <a href="mailto:henriquemmarti@gmail.com?subject=Burger%2042%20-%20Delete%20account">henriquemmarti@gmail.com</a> with the subject "Burger 42 – Delete account", from the email address you sign in with. Your account, name, reviews and photos are deleted within 30 days.</li>
+    <li>While your account exists, the data is kept so the group can keep seeing the ranking.</li>
+  </ul>
+
+  <h2>Your rights</h2>
+  <p>Under Brazil's data protection law (LGPD), you can ask to access, correct or delete your data using the contact email below.</p>
+
+  <h2>Children</h2>
+  <p>Burger 42 is not directed at children under 13 and does not knowingly collect data from them.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If the app's use of data changes, this page will be updated before the new version is released, and the date above will change.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: <a href="mailto:henriquemmarti@gmail.com">henriquemmarti@gmail.com</a></p>
+</section>
+
+<footer>© 2026 NKO Industries</footer>
+</main>
+<script>
+(function () {
+  var langs = ["pt", "en"];
+  var htmlLang = { pt: "pt-BR", en: "en" };
+  var root = document.documentElement;
+  root.classList.add("js");
+
+  function show(lang) {
+    if (langs.indexOf(lang) < 0) lang = "pt";
+    document.querySelectorAll("section[data-lang]").forEach(function (s) {
+      s.classList.toggle("active", s.getAttribute("data-lang") === lang);
+    });
+    document.querySelectorAll("nav a[data-lang]").forEach(function (a) {
+      a.setAttribute("aria-current", a.getAttribute("data-lang") === lang ? "true" : "false");
+    });
+    root.lang = htmlLang[lang];
+  }
+
+  function fromHash() {
+    var h = (location.hash || "").replace("#", "").toLowerCase();
+    if (h === "excluir-conta") return "pt";
+    if (h === "delete-account") return "en";
+    return langs.indexOf(h) >= 0 ? h : null;
+  }
+
+  function fromBrowser() {
+    var l = (navigator.language || "pt").toLowerCase().slice(0, 2);
+    return l === "en" ? "en" : "pt";
+  }
+
+  document.querySelectorAll("nav a[data-lang]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var lang = a.getAttribute("data-lang");
+      show(lang);
+      try { history.replaceState(null, "", "#" + lang); } catch (err) {}
+      window.scrollTo(0, 0);
+    });
+  });
+
+  window.addEventListener("hashchange", function () { var h = fromHash(); if (h) show(h); });
+  var start = fromHash();
+  show(start || fromBrowser());
+  if (start && location.hash.length > 3) {
+    var target = document.getElementById(location.hash.slice(1));
+    if (target) target.scrollIntoView();
+  }
+})();
+</script>
+</body>
+</html>
